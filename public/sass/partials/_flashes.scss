@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @keyframes slideIn {
   0% {
     transform: translateX(-10px);
