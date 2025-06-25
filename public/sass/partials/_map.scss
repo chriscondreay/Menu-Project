@@ -1,7 +1,9 @@
+@use 'variables';
+
 .map {
   padding: 20px;
   background: white;
-  box-shadow: $shad;
+  box-shadow: variables.$shad;
 }
 #map {
   height: 500px;

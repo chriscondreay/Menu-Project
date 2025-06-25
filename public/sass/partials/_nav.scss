@@ -1,10 +1,12 @@
+@use 'variables';
+
 .nav {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
   justify-content: space-between;
-  background: $black;
+  background: variables.$black;
   &__section {
     display: flex;
     &--search {
@@ -15,7 +17,7 @@
     display: flex;
   }
   &__link {
-    background: $black;
+    background: variables.$black;
     color: white;
     border-right: 1px solid rgba(255,255,255,0.1);
     text-transform: uppercase;
@@ -39,7 +41,7 @@
       svg {
         transform: scale(1.2)
       }
-      background: linear-gradient(90deg, #48ded4 0%, #a026bf 20%, #e82c75 60%, $yellow 85%, #48ded4 95%) fixed;
+      background: linear-gradient(90deg, #48ded4 0%, #a026bf 20%, #e82c75 60%, variables.$yellow 85%, #48ded4 95%) fixed;
       // background: none;
     }
     &--logo {

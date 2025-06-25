@@ -1,3 +1,5 @@
+@use 'variables';
+
 .stores {
   display:flex;
   flex-wrap:wrap;
@@ -8,7 +10,7 @@
   background:white;
   margin: 10px 0;
   width:30%;
-  box-shadow: $shad;
+  box-shadow: variables.$shad;
   &--wide {
     width: 100%;
   }

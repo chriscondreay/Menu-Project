@@ -1,3 +1,5 @@
+@use 'variables';
+
 @font-face {
   font-family: "panama";
   src: url("../../fonts/panama-bold-webfont.woff2") format("woff2"),
@@ -12,7 +14,7 @@ html {
 
 body {
   font-size: 1.5rem;
-  color: $black;
+  color: variables.$black;
 }
 
 h1,
@@ -29,11 +31,11 @@ h6 {
 
 a {
   text-decoration: none;
-  color: $black;
+  color: variables.$black;
 }
 
 p a {
-  border-bottom: 2px solid $yellow;
+  border-bottom: 2px solid variables.$yellow;
 }
 
 p {
@@ -65,11 +67,13 @@ p {
     z-index: -1;
     transform: skew(-5deg);
   }
-  line-height: 1.1;
+  & {
+    line-height: 1.1;
+  }
   // inline link inside
   a {
     border-bottom: 0;
-    $yellowa: rgba($yellow, 0.8);
+    $yellowa: rgba(variables.$yellow, 0.8);
     background-image: linear-gradient(to right, $yellowa 100%, $yellowa 50%);
   }
 }

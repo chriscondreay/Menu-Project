@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use 'variables';
+
 /*
   Reviewer Form
  */
@@ -12,7 +15,7 @@
       display: none;
       &:checked {
         & ~ label {
-          color: $yellow;
+          color: variables.$yellow;
         }
       }
       & + label {
@@ -31,7 +34,7 @@
         &[for="star2"] { order: 2; }
         &[for="star1"] { order: 1; }
         &:hover, &:hover ~ label {
-          color: lighten($yellow,20%);
+          color: color.scale(variables.$yellow, $lightness: 20%);
         }
       }
     }
@@ -47,7 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid $grey;
+    border-top: 1px solid variables.$grey;
     & > * {
       flex: 1;
     }

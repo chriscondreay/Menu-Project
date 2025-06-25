@@ -1,8 +1,11 @@
+@use 'sass:color';
+@use 'variables';
+
 .review {
   background: white;
-  border: 1px solid $grey;
+  border: 1px solid variables.$grey;
   border-bottom: 0;
-  border-bottom: 1px solid $grey;
+  border-bottom: 1px solid variables.$grey;
   margin-bottom: 2rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   position: relative;
@@ -12,17 +15,17 @@
     left: 0;
     content: '';
     display: block;
-    background: $verticalGrad;
+    background: variables.$verticalGrad;
     position: absolute;
     height: 100%;
     background-attachment: fixed;
   }
   &__header {
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid variables.$grey;
     display: flex;
     & > * {
       // this is fine, don't email me about it
-      border-right: 1px solid $grey;
+      border-right: 1px solid variables.$grey;
       padding: 0.2rem;
       display: flex;
       align-items: center;
@@ -43,10 +46,10 @@
   }
   &__time {
     font-size: 1.2rem;
-    color: lighten(black, 60%);
+    color: color.scale(black, $lightness: 60%);
   }
   &__stars {
-    color: $yellow;
+    color: variables.$yellow;
   }
   &__body {
     padding: 2rem;

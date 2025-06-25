@@ -1,3 +1,5 @@
+@use 'variables';
+
 .table {
   width: 100%;
   td {
@@ -10,7 +12,7 @@
     background: #f7f7f7;
   }
   thead tr {
-    background: $black;
+    background: variables.$black;
     color: white;
   }
 }

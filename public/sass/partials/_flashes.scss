@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'variables';
 
 @keyframes slideIn {
   0% {
@@ -36,7 +37,7 @@
     background: none;
     border:0;
     &:hover {
-      color: $yellow;
+      color: variables.$yellow;
     }
   }
   &:after {

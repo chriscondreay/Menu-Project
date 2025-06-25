@@ -1,7 +1,9 @@
+@use 'variables';
+
 input, textarea {
   width:100%;
   padding:10px;
-  border: 1px solid $grey;
+  border: 1px solid variables.$grey;
   &.input {
     &--error {
       border-color: red;
@@ -17,7 +19,7 @@ label {
 .form {
   background: white;
   padding: 2rem;
-  box-shadow: $grad;
+  box-shadow: variables.$grad;
   & + .form {
     margin-top: 4rem;
   }
@@ -27,6 +29,6 @@ label {
     font-size: 2rem;
     padding-bottom: 2rem;
     margin-bottom: 2rem;
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid variables.$grey;
   }
 }
