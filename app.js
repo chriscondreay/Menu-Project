@@ -58,4 +58,10 @@ app.use('/', routes);
 
 app.use(errorHandlers.notFound);
 
+if (app.get('env') === 'development') {
+    app.use(errorHandlers.developmentErrors);
+}
+
+app.use(errorHandlers.productionErrors);
+
 module.exports = app;
