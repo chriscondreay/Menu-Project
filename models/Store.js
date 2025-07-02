@@ -19,20 +19,21 @@ const storeSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    location: {
-        type: {
-            type: String,
-            default: 'Point'
-        },
-        coordinates: [{
-            type: Number,
-            required: 'must have a location'
-        }],
-        address: {
-            type: String,
-            required: 'must have an address'
-        }
-    }
+    // location: {
+    //     type: {
+    //         type: String,
+    //         default: 'Point'
+    //     },
+    //     coordinates: [{
+    //         type: Number,
+    //         required: 'must have a location'
+    //     }],
+    //     address: {
+    //         type: String,
+    //         required: 'must have an address'
+    //     }
+    // },
+    photo: String
 });
 
 storeSchema.pre('save', function(next) {
