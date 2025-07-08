@@ -79,3 +79,12 @@ exports.getStoreBySlug = async (req, res, next) => {
     if (!store) return next();
     res.render('store', { store, title: store.name });
 };
+
+exports.getStoresByTags = async (req, res) => {
+    const tag = req.params.tag;
+    const tagPromise = Store.getTagsList();
+    const storesPromise = Store.find({ tags: tag });
+    const result = await Promise.all([tagPromise, storesPromise]);
+
+    res.render('tag', { tagPromise, title: 'Tags', tag });
+}
