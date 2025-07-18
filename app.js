@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 const errorHandlers = require('./handlers/errorHandlers');
+require('./handlers/passport');
 
 const app = express();
 
