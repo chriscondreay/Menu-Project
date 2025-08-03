@@ -4,13 +4,23 @@ const MongoStore = require('connect-mongo');
 const path = require('path');
 const passport = require('passport');
 const flash = require('connect-flash');
-const routes = require('./routes/index');
-const helpers = require('./helpers');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
+const { promisify } = require('util'); // Add this missing import
+const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
+
+// Import passport configuration
 require('./handlers/passport');
+
+// Import all models BEFORE requiring routes
+require('./models/Store');
+require('./models/User');
+require('./models/Review');
+
+// Import routes AFTER models are loaded
+const routes = require('./routes/index');
 
 const app = express();
 
@@ -50,10 +60,10 @@ app.use((req, res, next) => {
     next();
 });
 
-// app.use((req, res, next) => {
-//     req.login = promisify(req.login, req);
-//     next();
-// });
+app.use((req, res, next) => {
+    req.login = promisify(req.login, req);
+    next();
+});
 
 app.use('/', routes);
 
