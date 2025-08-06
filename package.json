@@ -4,13 +4,15 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./start.js",
-    "watch": "nodemon ./start.js --ignore public/",
-    "dev": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
-    "assets": "webpack -w",
-    "sample": "node ./data/load-sample-data.js",
-    "blowitallaway": "node ./data/load-sample-data.js --delete"
-  },
+  "dev": "vercel dev",
+  "build": "webpack",
+  "start": "node api/index.js",
+  "watch": "nodemon ./start.js --ignore public/",
+  "assets": "webpack -w",
+  "sample": "node ./data/load-sample-data.js",
+  "blowitallaway": "node ./data/load-sample-data.js --delete"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -41,6 +43,7 @@
     "passport-local-mongoose": "^8.0.0",
     "path": "^0.12.7",
     "pug": "^3.0.3",
+    "serverless-http": "^3.2.0",
     "slugs": "^0.1.3",
     "uuid": "^11.1.0"
   },
