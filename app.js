@@ -20,8 +20,6 @@ require('./models/Store');
 require('./models/User');
 require('./models/Review');
 
-connectToDatabase();
-
 // Import routes AFTER models are loaded
 const routes = require('./routes/index');
 

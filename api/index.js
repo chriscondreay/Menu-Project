@@ -1,21 +1,19 @@
-const mongoose = require('mongoose');
 const serverless = require('serverless-http');
+const app = require('../app');
+const connectToDatabase = require('../utils/db');
 
-require('dotenv').config({ path: '.env' });
+let handler; // cached handler
 
-// mongoose.connect(process.env.DATABASE);
-mongoose.Promise = global.Promise;
-mongoose.connection.on('error', (err) => {
-    console.error(`${err.message}`);
-});
-
-require('./models/Store');
-require('./models/User');
-
-const app = require('./app');
-app.set('port', process.env.PORT || 8800);
-// const server = app.listen(app.get('port'), () => {
-//     console.log(`Express running -> PORT ${server.address().port}`)
-// });
-
-module.exports = serverless(app);
+module.exports = async (req, res) => {
+  try {
+    if (!handler) {
+      await connectToDatabase();         // 👈 Ensure DB is connected
+      handler = serverless(app);         // 👈 Create handler once
+    }
+    return handler(req, res);            // 👈 Return the handler
+  } catch (err) {
+    console.error('Function crashed:', err);
+    res.statusCode = 500;
+    res.end('Internal Server Error');
+  }
+};
