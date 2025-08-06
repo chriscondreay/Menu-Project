@@ -3,7 +3,6 @@ const express = require('express');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const path = require('path');
-const passport = require('passport');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -12,13 +11,12 @@ const { promisify } = require('util'); // Add this missing import
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
 
-// Import passport configuration
-require('./handlers/passport');
-
-// Import all models BEFORE requiring routes
 require('./models/Store');
 require('./models/User');
 require('./models/Review');
+
+require('./handlers/passport');
+const passport = require('passport');
 
 // Import routes AFTER models are loaded
 const routes = require('./routes/index');
