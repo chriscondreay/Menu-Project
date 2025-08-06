@@ -4,15 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-  "dev": "vercel dev",
-  "build": "webpack",
-  "start": "node api/index.js",
-  "watch": "nodemon ./start.js --ignore public/",
-  "assets": "webpack -w",
-  "sample": "node ./data/load-sample-data.js",
-  "blowitallaway": "node ./data/load-sample-data.js --delete"
-}
-,
+    "dev": "vercel dev",
+    "build": "webpack",
+    "start": "node api/index.js",
+    "watch": "nodemon ./start.js --ignore public/",
+    "assets": "webpack -w",
+    "sample": "node ./data/load-sample-data.js",
+    "blowitallaway": "node ./data/load-sample-data.js --delete"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -55,7 +54,6 @@
     "concurrently": "^9.1.2",
     "css-loader": "^7.1.2",
     "mini-css-extract-plugin": "^2.9.2",
-    "node-sass": "^9.0.0",
     "nodemon": "^3.1.10",
     "postcss": "^8.5.6",
     "postcss-loader": "^8.1.1",
