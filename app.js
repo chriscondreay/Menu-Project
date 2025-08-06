@@ -1,3 +1,4 @@
+const connectToDatabase = require('./utils/db');
 const express = require('express');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
@@ -18,6 +19,8 @@ require('./handlers/passport');
 require('./models/Store');
 require('./models/User');
 require('./models/Review');
+
+connectToDatabase();
 
 // Import routes AFTER models are loaded
 const routes = require('./routes/index');
